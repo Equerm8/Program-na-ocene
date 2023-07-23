@@ -1,0 +1,18 @@
+60. Three particles with masses
+m1 = 4 kg, 
+m2 = 8 kg,
+m3 = 4 kg are placed on the XOY plane. 
+
+At time t = 0, these particles are at rest, 
+and their positions are respectively: 
+(-2.2) m, 
+(4.1) m,
+(-3.0) m. 
+
+Forces
+F1(vector) = -F1x̂, F1 = 16 N; 
+F2(vector) = F2ŷ, F2 = 16N; 
+F3(vector) = F3x̂, F3 = 8 N 
+acts on each of these bodies.
+ 
+Find the position of the center of mass at time t = 2 s.
