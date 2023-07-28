@@ -1,6 +1,7 @@
 SETTINGS FOR THE PROGRAM.
 _____________________________________________________________________________
 Rules:
+PRESS Q TO TERMINATE
 - only values can be changed,
 - you can add and delete particles,
 - number of masses, forces and positions must be the same,
