@@ -1,13 +1,16 @@
 SETTINGS FOR THE PROGRAM.
 _____________________________________________________________________________
 Rules:
-PRESS Q TO TERMINATE
+PRESS Q TO EXIT VISUALISATION
 - only values can be changed,
-- you can add and delete particles,
+- you can add and delete particles. In order to do that add new mass, force
+  and initial position,
+- number of particles > 0
 - number of masses, forces and positions must be the same,
 - only intiger numbers,
 - number of iterations > number of particles,
 - particles can only move in one direction. Except for center of mass.
+- mass > 0,
 - if you don't follow the rules then the program won't work
 _____________________________________________________________________________
 
