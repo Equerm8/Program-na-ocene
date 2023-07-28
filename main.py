@@ -30,9 +30,8 @@ times = []
 
 # Opening init_data
 with open("init_data.txt") as file:
-   
     for line in file:
-        
+
         if line[0] == "=":
             read = False
 
@@ -40,7 +39,6 @@ with open("init_data.txt") as file:
             line == "Initial positions:\n" or line == "Initial velocity:\n" or \
             line == "Number of iterations:\n" or line == "Axis limit:\n" or \
             line == "Pause time:\n" or line == "t0 t1:\n":
-
             read = True
             iterator += 1
             continue
@@ -80,40 +78,30 @@ with open("init_data.txt") as file:
         elif read == True and iterator == 8:
             times.append(int(line))
             continue
-
 file.close()
 
 # Preparation for finding position equations
 axis =[]
 initPosAxis = []
-
 for i, f in enumerate(forces):
     # movement in the axis of...
     axis.append('x' if f[len(f)-2] == 'x' else 'y') 
-    
     # pos. in the context of the axis
     initPosAxis.append(initPos1[i][0] if axis[i] == 'x' else initPos1[i][1]) 
-    
     # intiger forces
     forces[i] = int(forces[i][0:len(forces[i])-2]) 
-
 data = list(zip(masses, forces, axis, initPosAxis))
-
 
 # Solution
 t = np.linspace(times[0], times[1], numberOfIterations)
 positions = []
 for i, d in enumerate(data):
     m, f, a, ip = d
-    
     acceleration = f/m
     solve = odeint(dSdt, [ip, 0], t)
-
     tempPos = [s[0] for s in solve]
     temp = tempPos[0]
-
     positions.append(tempPos)
-
 rows = len(positions)
 
 # Visualisation
@@ -124,33 +112,27 @@ with open("output.txt", 'w') as file:
             exit = True
             break 
         plt.draw()
-
         newMasses = []
         newPositions = []
-
         plt.xlim(-limit, limit)
         plt.ylim(-limit, limit)
         plt.xlabel("x")
         plt.ylabel("y")
         plt.grid()
-        
+
         for row in range(rows):
             if axis[row] == 'x':
                 plt.scatter(positions[row][col], initPos1[row][1], 
                             label=f"Particle {row+1}")
-                
                 newPositions.append([positions[row][col], initPos1[row][1]])
-
                 if col == numberOfIterations-1:
                     file.write(f"{row+1}. particle coordinates: ({positions[row][col]},{initPos1[row][1]})\n")
 
             else:
                 plt.scatter(initPos1[row][0], positions[row][col], 
                             label=f"Particle {row+1}")
-                
                 newPositions.append([initPos1[row][0], 
                                      positions[row][col]])
-                
                 if col == numberOfIterations-1:
                     file.write(f"{row+1}. particle coordinates: ({initPos1[row][0]}, {positions[row][col]}\n")
             
@@ -158,14 +140,10 @@ with open("output.txt", 'w') as file:
         plt.scatter(comX, comY, label="Center of mass")
         plt.legend()
         if keyboard.is_pressed('q') or exit == True: break 
-        
+
         plt.pause(pauseTime)
-
         if col != numberOfIterations-1: plt.clf()     
-
         if keyboard.is_pressed('q') or exit == True: break 
-
     plt.show()
-
     file.write(f"\nCenter of mass coordinates: ({comX},{comY})\n")
     file.close()
