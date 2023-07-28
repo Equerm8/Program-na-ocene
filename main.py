@@ -120,7 +120,9 @@ rows = len(positions)
 exit = False
 with open("output.txt", 'w') as file:
     for col in range(numberOfIterations):
-        if keyboard.is_pressed('q'): break 
+        if keyboard.is_pressed('q'): 
+            exit = True
+            break 
         plt.draw()
 
         newMasses = []
@@ -133,7 +135,6 @@ with open("output.txt", 'w') as file:
         plt.grid()
         
         for row in range(rows):
-            if keyboard.is_pressed('q'): exit = True
             if axis[row] == 'x':
                 plt.scatter(positions[row][col], initPos1[row][1], 
                             label=f"Particle {row+1}")
@@ -156,6 +157,7 @@ with open("output.txt", 'w') as file:
         comX, comY = center_of_mass(masses, newPositions)
         plt.scatter(comX, comY, label="Center of mass")
         plt.legend()
+        if keyboard.is_pressed('q') or exit == True: break 
         
         plt.pause(pauseTime)
 
@@ -163,7 +165,7 @@ with open("output.txt", 'w') as file:
 
         if keyboard.is_pressed('q') or exit == True: break 
 
-    plt.show(block=True)
+    plt.show()
 
     file.write(f"\nCenter of mass coordinates: ({comX},{comY})\n")
     file.close()

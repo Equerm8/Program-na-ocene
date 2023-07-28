@@ -1,2 +1,2 @@
 
-Center of mass coordinates: (0.0,0.0)
+Center of mass coordinates: (0.5026858003656801,1.3475695757392832)
