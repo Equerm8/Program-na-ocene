@@ -32,8 +32,8 @@ The problem is to find final coordinates of the center of the mass after some se
 
 ### a) Center of mass equation
 If we want to find coordinates of the center of the mass we would use this equation:
-![Center of mass equation](https://i0.wp.com/www.learncram.com/wp-content/uploads/2020/09/center-of-mass-1.png?resize=325%2C215&ssl=1)
 
+![Center of mass equation](https://i0.wp.com/www.learncram.com/wp-content/uploads/2020/09/center-of-mass-1.png?resize=325%2C215&ssl=1)
 source: http://hyperphysics.phy-astr.gsu.edu/hbase/cm.html
 
 ### b) Dynamic equation of motion
