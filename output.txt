@@ -1,2 +1,5 @@
+1. particle coordinates: (-10.000000000024167,2.0)
+2. particle coordinates: (4.0, 5.000000000012142
+3. particle coordinates: (1.0000000000121423,0.0)
 
-Center of mass coordinates: (0.11322824201311432,2.27354351597383)
+Center of mass coordinates: (-0.25000000000300626,3.000000000006071)
