@@ -78,4 +78,4 @@ The program is a simulation, not a library, so you can download it right away an
 
 🔹 run executable file and after visualization output.txt.
 
-![App Screenshot](https://drive.google.com/uc?id=1Ej1GQitaxZkxG98wvgvfU-1oyumXhCWW)
+![Particles](https://drive.google.com/uc?id=1Ej1GQitaxZkxG98wvgvfU-1oyumXhCWW)
