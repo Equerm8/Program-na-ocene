@@ -41,7 +41,7 @@ source: http://hyperphysics.phy-astr.gsu.edu/hbase/cm.html
 ### b) Dynamic equation of motion
 In the book I gave as a source, you can find an analytical solution to this problem, but I wanted to do it numerically. So I used Newton's second law of motion.
 
-![II Newtons law](https://drive.google.com/uc?id=1k0us7t1PfIT6dYWKgwTy1QHFN40fF6DI)
+![II Newtons law](https://drive.google.com/1-OR6R0zPiZmErW_H5PS3TiAzb2lEtbaH)
 
 The acceleration is the second derivative of the position, so I changed a to the second derivative. 
 
