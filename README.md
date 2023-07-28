@@ -56,6 +56,9 @@ This is the answer to how my program works. It solves this second derivative, ca
 ## III. Installation
 The program is a simulation, not a library, so you can download it right away and use it. 
 ## IV. Instructions
+
+Press 'q' to exit.
+
 #### If you just want to see the solution to the problem and its visualization:
 
 🔹 enable the executable file
