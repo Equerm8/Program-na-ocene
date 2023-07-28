@@ -1,2 +1,1 @@
 
-Center of mass coordinates: (0.11322824201311432,2.27354351597383)
