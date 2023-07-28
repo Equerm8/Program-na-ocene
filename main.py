@@ -1,8 +1,7 @@
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 import numpy as np
-
-acceleration = 0
+import keyboard
 
 def dSdt(x, t):
     x, v = x
@@ -21,6 +20,7 @@ def center_of_mass(masses, positions):
     return x, y
 
 # Init. conditions
+acceleration = 0
 read = False
 masses = []
 forces = []
@@ -88,11 +88,14 @@ axis =[]
 initPosAxis = []
 
 for i, f in enumerate(forces):
-    axis.append('x' if f[len(f)-2] == 'x' else 'y') # movement in the axis of...
-   
-    initPosAxis.append(initPos1[i][0] if axis[i] == 'x' else initPos1[i][1]) # pos. in the context of the axis
+    # movement in the axis of...
+    axis.append('x' if f[len(f)-2] == 'x' else 'y') 
     
-    forces[i] = int(forces[i][0:len(forces[i])-2]) # intiger forces
+    # pos. in the context of the axis
+    initPosAxis.append(initPos1[i][0] if axis[i] == 'x' else initPos1[i][1]) 
+    
+    # intiger forces
+    forces[i] = int(forces[i][0:len(forces[i])-2]) 
 
 data = list(zip(masses, forces, axis, initPosAxis))
 
@@ -114,8 +117,12 @@ for i, d in enumerate(data):
 rows = len(positions)
 
 # Visualisation
+exit = False
 with open("output.txt", 'w') as file:
     for col in range(numberOfIterations):
+        if keyboard.is_pressed('q'): break 
+        plt.draw()
+
         newMasses = []
         newPositions = []
 
@@ -126,7 +133,7 @@ with open("output.txt", 'w') as file:
         plt.grid()
         
         for row in range(rows):
-
+            if keyboard.is_pressed('q'): exit = True
             if axis[row] == 'x':
                 plt.scatter(positions[row][col], initPos1[row][1], 
                             label=f"Particle {row+1}")
@@ -145,20 +152,18 @@ with open("output.txt", 'w') as file:
                 
                 if col == numberOfIterations-1:
                     file.write(f"{row+1}. particle coordinates: ({initPos1[row][0]}, {positions[row][col]}\n")
-                    
-                
             
         comX, comY = center_of_mass(masses, newPositions)
         plt.scatter(comX, comY, label="Center of mass")
         plt.legend()
         
-            
         plt.pause(pauseTime)
 
-        if col != numberOfIterations-1: plt.clf()
-    
-    file.write(f"\nCenter of mass coordinates: ({comX},{comY})\n")
-    
-    plt.show()
+        if col != numberOfIterations-1: plt.clf()     
 
-file.close()
+        if keyboard.is_pressed('q') or exit == True: break 
+
+    plt.show(block=True)
+
+    file.write(f"\nCenter of mass coordinates: ({comX},{comY})\n")
+    file.close()
