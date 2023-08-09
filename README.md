@@ -1,9 +1,11 @@
 
 # CENTER OF MASS VISUALISATION
 <div align="center">
+  
   <img src="https://drive.google.com/uc?id=1LM0BSiAZYsSIHtTdyukWAKB6zuCyq-bm" alt="Logo"/>
   
   <img src="https://media.istockphoto.com/id/618420050/vector/justice-scale-vector-illustration.jpg?s=612x612&w=0&k=20&c=uKT5agD87TJa_92DOoNFVS_FhuXu-73vmar-H8eXL8E=" alt="Libra"/>
+  
   source: https://www.istockphoto.com/pl/ilustracje/drawing-of-libra-scales-star-sign
 </div>
 
